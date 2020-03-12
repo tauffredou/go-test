@@ -20,8 +20,9 @@ func New() *FakeClock {
 	}
 }
 
-func (c *FakeClock) Tick() {
+func (c *FakeClock) Tick() time.Time {
 	c.start = c.start.Add(time.Second)
+	return c.start
 }
 
 func (c *FakeClock) Now() time.Time {
